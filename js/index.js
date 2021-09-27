@@ -121,11 +121,3 @@ extraLink.style.color = 'green'
 const extraContact  = document.createElement('p')
 extraContact.textContent = 'Extra Contact Info'
 document.querySelector('.contact').appendChild(extraContact)
-
-const fruits = ["apples", "oranges", "lemons", "limes"];
-
-fruits.forEach(fruit => {
-  const span = document.createElement('span');
-  span.textContent = fruit;
-  document.body.appendChild(span);
-});
