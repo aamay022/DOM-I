@@ -79,28 +79,23 @@ title.textContent = siteContent["cta"]["h1"]
 let button = document.querySelector("button");
 button.textContent = siteContent["cta"]["button"]
 
-const firstTextContent = document.querySelector('.top-content .text-content h4')
+const headings = document.querySelectorAll('.text-content h4')
 
-const featuresHeading = firstTextContent
-featuresHeading.textContent = siteContent['main-content']['features-h4']
+headings[0].textContent= siteContent['main-content']['features-h4']
+headings[1].textContent=siteContent['main-content']['about-h4']
+headings[2].textContent=siteContent['main-content']['services-h4']
+headings[3].textContent=siteContent['main-content']['product-h4']
+headings[4].textContent=siteContent['main-content']['vision-h4']
 
-const featuresInfo = featuresHeading.nextElementSibling
-featuresInfo.textContent = siteContent['main-content']['features-content']
+const info = document.querySelectorAll('.text-content p')
 
-// const secondTextContent =  firstTextContent.nextElementSibling
-// secondTextContent.textContent = siteContent['main-content']['about-h4']
-
-//Not sure about how to get the rest of the headers and there content.
-//Tried using .querySelectorAll(.text-content h4) in order to only get the h4's but that doesnt seem to work.
-
-const secondTextContent = document.querySelector('.bottom-content .text-content h4')
-
-const servicesHeading = secondTextContent
-servicesHeading.textContent = siteContent['main-content']['services-h4']
-
-const servicesInfo = servicesHeading.nextElementSibling
-servicesInfo.textContent = siteContent['main-content']['services-content']
-
+info[0].textContent= siteContent['main-content']['features-content']
+info[1].textContent=siteContent['main-content']['about-content']
+info[2].textContent=siteContent['main-content']['services-content']
+info[3].textContent=siteContent['main-content']['product-content']
+info[4].textContent=siteContent['main-content']['vision-content']
+//Theres probably a faster way of doing this using for each, but i couldnt find it.
+//i also wanted to put all the content from the array into seperate arrays ([headings] && [info's])
 
 let contactHeading = document.querySelector('.contact h4')
 contactHeading.textContent = siteContent['contact']['contact-h4']
@@ -126,3 +121,11 @@ extraLink.style.color = 'green'
 const extraContact  = document.createElement('p')
 extraContact.textContent = 'Extra Contact Info'
 document.querySelector('.contact').appendChild(extraContact)
+
+const fruits = ["apples", "oranges", "lemons", "limes"];
+
+fruits.forEach(fruit => {
+  const span = document.createElement('span');
+  span.textContent = fruit;
+  document.body.appendChild(span);
+});
